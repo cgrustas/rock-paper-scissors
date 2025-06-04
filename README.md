@@ -1,7 +1,5 @@
 # rock-paper-scissors
 
-# Rock Paper Scissors Game
-
 A console-based Rock Paper Scissors game built with JavaScript as part of [The Odin Project](https://www.theodinproject.com/) curriculum.
 
 ## 🎮 About the Project
