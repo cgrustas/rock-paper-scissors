@@ -1,3 +1,7 @@
+
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
     let x = Math.random();
     console.log("Random value x:", x);
