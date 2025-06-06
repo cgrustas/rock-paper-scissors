@@ -84,7 +84,7 @@ function playGame() {
 }
 
 function getComputerChoice() {
-    let x = Math.random();
+    const x = Math.random();
     let result;
     if (x < 1/3) result = "rock";
     else if (x < 2/3) result = "paper";
