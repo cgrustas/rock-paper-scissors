@@ -15,17 +15,21 @@ function playGame() {
 
     let humanScore = 0;
     let computerScore = 0;
+    let isGameOver = false;
 
     const results = document.querySelector(".results");
     const answer = document.createElement("div");
     const humanScoreDiv = document.createElement("div");
     const computerScoreDiv = document.createElement("div");
+    const winner = document.createElement("div");
 
     results.appendChild(answer);
     results.appendChild(humanScoreDiv);
     results.appendChild(computerScoreDiv);
+    results.appendChild(winner);
 
     function playRound(humanChoice, computerChoice) {
+        if (isGameOver) return;
         if (humanChoice === "rock") {
             if (computerChoice === "rock") {
                 answer.textContent = "Try again! You both chose rock";
@@ -67,7 +71,16 @@ function playGame() {
         }
         humanScoreDiv.textContent = `Human score: ${humanScore}`;
         computerScoreDiv.textContent = `Computer score: ${computerScore}`;
-    };
+
+        if (humanScore >= 5) {
+            winner.textContent = "You win!";
+            isGameOver = true;
+        } 
+        if (computerScore >= 5) {
+            winner.textContent = "Computer wins!";
+            isGameOver = true;
+        }
+    }
 }
 
 function getComputerChoice() {
