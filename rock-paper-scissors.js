@@ -2,7 +2,6 @@ function playGame() {
     let humanScore = 0;
     let computerScore = 0;
 
-
     let round = function playRound(humanChoice, computerChoice) {
         humanChoice = humanChoice.toLowerCase();
         let answer;
@@ -51,10 +50,20 @@ function playGame() {
         return answer;
     };
 
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
 
-    round(humanSelection, computerSelection);
+    const rock = document.querySelector("rock");
+    const paper = document.querySelector("paper");
+    const scissors = document.querySelector("scissors");
+
+    rock.addEventListener("click", () => {
+        round("rock", getComputerChoice());
+    });
+    paper.addEventListener("click", () => {
+        round("paper", getComputerChoice());
+    });
+    scissors.addEventListener("click", () => {
+        round("scissors", getComputerChoice());
+    });
 }
 
 function getComputerChoice() {
