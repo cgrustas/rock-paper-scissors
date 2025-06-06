@@ -51,12 +51,10 @@ function playGame() {
         return answer;
     };
 
-    for (let i = 0; i < 5; i++) {
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
 
-        round(humanSelection, computerSelection);
-    }
+    round(humanSelection, computerSelection);
 }
 
 function getComputerChoice() {
